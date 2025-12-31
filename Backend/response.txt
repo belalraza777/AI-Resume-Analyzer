@@ -1,0 +1,34 @@
+aiResponse=  {
+  atsScore: 85,
+  skillsFound: [
+    'MongoDB',            'Express.js',
+    'React.js',           'Node.js',
+    'JavaScript',         'HTML',
+    'CSS',                'Bootstrap',
+    'Tailwind CSS',       'Zustand',
+    'REST APIs',          'Socket.IO',
+    'JWT Authentication', 'Mongoose',
+    'SQL',                'Redis',
+    'Git',                'GitHub',
+    'Postman',            'Render',
+    'Vercel',             'VS Code',
+    'RBAC',               'Passport.js',
+    'Cloudinary',         'EJS',
+    'OpenAI API'
+  ],
+  skillsMissing: [
+    'TypeScript',
+    'GraphQL',
+    'AWS',
+    'Docker',
+    'Kubernetes',
+    'CI/CD',
+    'Unit Testing',
+    'Agile Methodology',
+    'Microservices',
+    'SASS',
+    'Webpack'
+  ],
+  summary: 'The resume demonstrates strong full stack development skills, with hands-on experience in MERN stack, real-time applications, authentication, caching, and state management. Projects highlight practical application of skills and use of modern tools.',
+  suggestions: 'Add experience or knowledge in cloud platforms (AWS), containerization (Docker/Kubernetes), testing frameworks, TypeScript, and CI/CD pipelines. Mention soft skills, teamwork, and methodologies like Agile for a more well-rounded profile.'
+}
