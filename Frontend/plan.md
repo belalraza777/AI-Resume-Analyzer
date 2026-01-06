@@ -1,4 +1,54 @@
-═══════════════════════════════════════════════════════════════════════════
+# Frontend Plan (Lean)
+
+## Goals
+- Ship a minimal, clean UI for auth and API testing.
+- Keep components small, no heavy dependencies beyond React Router and Axios.
+- Make styling straightforward with a few CSS variables.
+
+## Pages (keep only these now)
+1) Login
+2) Register
+3) OAuth success/bridge screen
+
+## Components (small set)
+- Button: variants primary/secondary/danger, loading, fullWidth, optional icon.
+- Input: label, icon, error text.
+- Card: simple surface wrapper.
+
+## Routing
+- /login → Login page
+- /register → Register page
+- /oauth-success → bridge that fetches user then redirects (fallback to /login)
+- / → redirect to /login
+- * → redirect to /login
+
+## Styling
+- Use globals.css with a handful of variables:
+  - --primary #6366F1, --success #10B981, --warning #F59E0B, --danger #EF4444
+  - --bg #F8FAFC, --surface #FFFFFF, --text #1E293B, --text-light #64748B, --border #E2E8F0
+  - --radius 6px, --radius-lg 12px, --shadow 0 4px 6px -1px rgba(0,0,0,0.1)
+- Keep layout centered for auth forms; max-width ~420px.
+- Use 14/16/24 font sizes; font: Inter, system-ui.
+
+## API
+- api.js with Axios instance, baseURL from VITE_API_URL, withCredentials true.
+- Simple error handling helper (surface message or fallback string).
+
+## State
+- AuthContext for user + login/register/logout + token-aware Axios; store user object, loading, error.
+- No other global state for now.
+
+## Implementation Order
+1) Set globals.css variables and base styles (body, cards, inputs, buttons).
+2) Build Button, Input, Card components.
+3) Wire AuthContext with Axios instance and basic login/register methods.
+4) Implement pages: Login, Register, OAuthSuccess bridge.
+5) Manual test flows (happy/failed login, register, oauth fallback).
+
+## Later (optional)
+- Add Layout + protected routes.
+- Add Upload, Reports, Dashboard with FileDropzone and ScoreRing.
+- Add toast/alert helper.═══════════════════════════════════════════════════════════════════════════
                     AI RESUME ANALYZER - FRONTEND UI PLAN
 ═══════════════════════════════════════════════════════════════════════════
 
@@ -21,94 +71,31 @@ Border:       #E2E8F0              → borders, dividers
 
 TYPOGRAPHY
 ──────────
-Font: 'Inter', system-ui, sans-serif
-Sizes: 14px (small) | 16px (body) | 20px (h3) | 24px (h2) | 32px (h1)
+# AI Resume Analyzer — Lean Project Plan
 
-SPACING
-───────
-8px | 16px | 24px | 32px | 48px
+## Goals
+- Deliver a minimal, stable end-to-end flow: auth, upload, analyze, view reports.
+- Keep stack simple; ship iteratively with testable slices.
+- Favor clarity over features; avoid premature complexity.
 
-RADIUS
-──────
-6px (buttons/inputs) | 12px (cards) | 9999px (pills/avatars)
+## Architecture (high level)
+- Frontend: Vite + React Router, Axios client, Auth context, light CSS vars.
+- Backend: Node/Express, JWT in httpOnly cookies, Multer for uploads, text extraction, AI client for analysis, MongoDB via Mongoose.
+- API shape: /auth, /oauth, /resume (upload), /reports (CRUD/read), /analyze (trigger AI).
 
+## Workstreams
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📦 TECH STACK
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-- React 19 + Vite
-- React Router DOM
-- Axios (API client)
-- React Icons (icons) → npm install react icons
-- Plain CSS with CSS variables
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📁 FOLDER STRUCTURE
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
-src/
-├── api/
-│   └── api.js              # Axios + interceptors
-├── components/
-│   ├── Layout.jsx          # Navbar + page wrapper
-│   ├── Button.jsx          # Reusable button
-│   ├── Input.jsx           # Reusable input
-│   ├── Card.jsx            # Card container
-│   ├── ScoreRing.jsx       # Circular ATS score display
-│   └── FileDropzone.jsx    # Drag & drop upload
-├── context/
-│   └── AuthContext.jsx
-├── pages/
-│   ├── Login.jsx
-│   ├── Register.jsx
-│   ├── Dashboard.jsx
-│   ├── Upload.jsx
-│   └── Reports.jsx
-├── styles/
-│   └── globals.css         # All styles + CSS variables
-├── App.jsx
-└── main.jsx
-
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-🧩 COMPONENTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-
+### Frontend (current scope trimmed to auth; later expand)
 BUTTON
 ──────
-Variants: primary (filled) | secondary (outlined) | danger (red)
-Props: variant, loading, fullWidth, icon
-
-INPUT
-─────
-Props: label, error, icon, type
-Shows red border + error text when error prop is set
 
 CARD
-────
-Simple white box with shadow and rounded corners
-Props: title, children
 
 ALERT
-─────
-Use third party lib 
-
-SCORE RING
-──────────
 Circular progress showing ATS score (0-100)
 Color changes: green (80+) | amber (60-79) | red (<60)
 
-FILE DROPZONE
-─────────────
-Dashed border box for drag & drop
-States: default | dragging (blue border) | file selected | uploading
 
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-📄 PAGE LAYOUTS
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 LAYOUT (wraps all auth pages)
 ─────────────────────────────

@@ -19,6 +19,10 @@ const resumeSchema = new mongoose.Schema({
     enum: ['pdf', 'docx'],
     required: [true, 'File type is required'],
   },
+  extractedText: {
+    type: String,
+    default: '',
+  },
   uploadedAt: {
     type: Date,
     default: Date.now,
@@ -26,6 +30,8 @@ const resumeSchema = new mongoose.Schema({
 }, {
   timestamps: true,
 });
+
+resumeSchema.index({ userId: 1 });
 
 const Resume = mongoose.model('Resume', resumeSchema);
 

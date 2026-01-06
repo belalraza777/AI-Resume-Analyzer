@@ -22,7 +22,7 @@ const Login = () => {
     setLoading(true);
     try {
       await login(email, password);
-      navigate('/dashboard');
+      navigate('/');
     } catch (err) {
       const msg = err?.response?.data?.message || 'Login failed';
       setError(msg);
@@ -51,7 +51,7 @@ const Login = () => {
           </div>
         </div>
         <h2 style={{ margin: '8px 0' }}>Welcome back</h2>
-        <p className="muted">Access your dashboard and reports.</p>
+        <p className="muted">Access your account.</p>
 
         {error ? <div className="error-text" style={{ marginBottom: 8 }}>{error}</div> : null}
 

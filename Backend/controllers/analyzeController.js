@@ -1,6 +1,5 @@
 const Resume = require('../models/Resume');
 const Report = require('../models/Report');
-const { extractResumeText } = require('../utils/textExtractor');
 const { analyzeResumeWithAI } = require('../utils/aiClient');
 
 
@@ -26,8 +25,15 @@ const analyzeResume = async (req, res) => {
             });
         }
 
-        const pdfText = await extractResumeText(resume.filePath, resume.fileType);
-        const analysis = await analyzeResumeWithAI(pdfText);
+        // Use extracted text from Resume record (extracted during upload)
+        const resumeText = resume.extractedText || '';
+        if (!resumeText) {
+            return res.status(400).json({ 
+                error: 'Resume text not available. Please re-upload the resume.' 
+            });
+        }
+
+        const analysis = await analyzeResumeWithAI(resumeText);
 
         const newReport = new Report({
             userId: req.user.id,
