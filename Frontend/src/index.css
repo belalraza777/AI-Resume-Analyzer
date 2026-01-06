@@ -1,1 +1,4 @@
-@import './styles/globals.css';
+@import './styles/globals.css';@import './styles/dashboard.css';
+@import './styles/upload.css';
+@import './styles/auth.css';
+@import './styles/responsive.css';

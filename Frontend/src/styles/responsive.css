@@ -1,0 +1,539 @@
+/* Mobile & Responsive Styles */
+
+/* Tablet (768px and below) */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: 0 16px 60px;
+  }
+
+  .navbar {
+    padding: 12px 16px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+
+  .nav-links {
+    gap: 4px;
+  }
+
+  .nav-link {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+
+  .page {
+    margin: 24px auto 50px;
+    padding: 0 16px;
+  }
+
+  .page-title {
+    font-size: 24px;
+  }
+
+  .page-subtitle {
+    font-size: 14px;
+  }
+
+  .card {
+    border-radius: 12px;
+    padding: 16px;
+  }
+
+  .button {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+
+  .button.large {
+    padding: 14px 24px;
+    font-size: 15px;
+  }
+
+  .form-group {
+    margin-bottom: 12px;
+  }
+
+  .input-shell {
+    padding: 8px 10px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .dropzone {
+    padding: 20px;
+  }
+
+  .dropzone .drop-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .overlay-card {
+    max-height: 95vh;
+    margin: 16px;
+  }
+
+  .overlay-header {
+    flex-wrap: wrap;
+  }
+
+  .overlay-header .button {
+    width: 100%;
+  }
+
+  .report-card {
+    gap: 12px;
+  }
+
+  .report-head {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .score-block {
+    width: 100%;
+  }
+
+  .score-circle {
+    width: 80px;
+    height: 80px;
+    font-size: 18px;
+  }
+
+  .report-meta {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .meta-item {
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  .report-skills {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .chip-row {
+    gap: 6px;
+  }
+
+  .chip {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+
+  .report-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .report-actions .button {
+    width: 100%;
+  }
+
+  .quick-actions {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .quick-actions .button {
+    width: 100%;
+  }
+
+  .tag-row {
+    gap: 6px;
+  }
+
+  .upload-loading-content {
+    padding: 40px 32px;
+    max-width: 90vw;
+  }
+
+  .loading-title {
+    font-size: 20px;
+  }
+
+  .loading-subtitle {
+    font-size: 14px;
+  }
+
+  .hero-section {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 60px 0;
+  }
+
+  .hero-title {
+    font-size: 40px;
+  }
+
+  .visual-card {
+    max-width: 300px;
+  }
+
+  .features-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+  }
+
+  .cta-card {
+    padding: 48px 32px;
+  }
+
+  .cta-card h2 {
+    font-size: 28px;
+  }
+}
+
+/* Mobile (480px and below) */
+@media (max-width: 480px) {
+  :root {
+    --radius: 5px;
+    --radius-lg: 10px;
+  }
+
+  html, body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    padding: 10px 12px;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .brand {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    gap: 2px;
+  }
+
+  .nav-link {
+    padding: 6px 8px;
+    font-size: 12px;
+  }
+
+  .nav-user {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .user-pill {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .page {
+    margin: 16px auto 40px;
+    padding: 0 12px;
+  }
+
+  .page-title {
+    font-size: 20px;
+  }
+
+  .page-subtitle {
+    font-size: 13px;
+  }
+
+  .page-header {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+
+  .card {
+    padding: 14px;
+  }
+
+  .button {
+    padding: 9px 12px;
+    font-size: 13px;
+  }
+
+  .button.large {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .spinner {
+    width: 14px;
+    height: 14px;
+    border-width: 2px;
+  }
+
+  .spinner.large {
+    width: 40px;
+    height: 40px;
+    border-width: 3px;
+  }
+
+  .form-group {
+    gap: 6px;
+    margin-bottom: 10px;
+  }
+
+  .label-row {
+    font-size: 13px;
+  }
+
+  .input-shell {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .input {
+    font-size: 16px;
+  }
+
+  .error-text {
+    font-size: 12px;
+  }
+
+  .muted {
+    font-size: 12px;
+  }
+
+  .dropzone {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .dropzone p {
+    font-size: 13px;
+    margin: 6px 0 2px !important;
+  }
+
+  .overlay-backdrop {
+    padding: 12px;
+  }
+
+  .overlay-card {
+    max-width: 100%;
+    max-height: 95vh;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .overlay-header {
+    gap: 8px;
+  }
+
+  .overlay-header .button {
+    width: 100%;
+    padding: 8px 12px;
+  }
+
+  .overlay-header .page-title {
+    font-size: 18px;
+  }
+
+  .score-circle {
+    width: 72px;
+    height: 72px;
+    font-size: 16px;
+    border-radius: 16px;
+  }
+
+  .score-circle svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .report-summary {
+    font-size: 14px;
+  }
+
+  .report-text {
+    font-size: 13px;
+  }
+
+  .skills-title {
+    font-size: 13px;
+  }
+
+  .chip {
+    padding: 4px 6px;
+    font-size: 11px;
+  }
+
+  .report-actions {
+    gap: 6px;
+  }
+
+  .report-actions .button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .quick-actions {
+    gap: 6px;
+  }
+
+  .quick-actions .button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .tag-row {
+    gap: 4px;
+    margin-top: 6px !important;
+  }
+
+  .upload-loading-content {
+    padding: 32px 24px;
+    max-width: 100%;
+    gap: 16px;
+  }
+
+  .loading-title {
+    font-size: 18px;
+  }
+
+  .loading-subtitle {
+    font-size: 13px;
+  }
+
+  .alert {
+    padding: 10px 12px;
+    gap: 10px;
+    font-size: 13px;
+  }
+
+  .alert-close {
+    width: 20px;
+    height: 20px;
+    font-size: 20px;
+  }
+
+  .hero-title {
+    font-size: 24px;
+    line-height: 1.2;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .hero-actions {
+    gap: 8px;
+  }
+
+  .visual-score {
+    gap: 12px;
+    padding: 30px;
+  }
+
+  .score-display {
+    font-size: 40px;
+  }
+
+  .score-label {
+    font-size: 13px;
+  }
+
+  .feature-card {
+    padding: 20px;
+  }
+
+  .feature-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 14px;
+  }
+
+  .feature-icon svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .feature-title {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+
+  .feature-description {
+    font-size: 13px;
+  }
+
+  .cta-card {
+    padding: 32px 20px;
+  }
+
+  .cta-card h2 {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .cta-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+  }
+
+  .auth-shell {
+    padding: 32px 16px;
+  }
+
+  .auth-card {
+    max-width: 100%;
+  }
+}
+
+/* Landscape Mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+  .hero-section {
+    padding: 40px 0;
+    gap: 30px;
+  }
+
+  .hero-title {
+    font-size: 28px;
+  }
+
+  .visual-card {
+    max-width: 180px;
+    aspect-ratio: auto;
+    height: 220px;
+  }
+
+  .dashboard-container {
+    padding: 24px 16px 50px;
+  }
+}
+
+/* Touch devices optimization */
+@media (hover: none) and (pointer: coarse) {
+  button {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  .nav-link {
+    min-height: 44px;
+  }
+
+  .button {
+    min-height: 44px;
+  }
+
+  .input-shell {
+    min-height: 44px;
+  }
+}

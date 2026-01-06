@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/auth.css';
 import { FiArrowRight, FiLock, FiMail, FiUser } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 

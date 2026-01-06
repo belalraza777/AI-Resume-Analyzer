@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import '../styles/upload.css';
 import api from '../api/api';
 import ReportCard from '../components/ReportCard';
 import useReportsStore from '../store/useReportsStore';
