@@ -31,7 +31,7 @@ const analyzeResumeWithAI = async (resumeText) => {
   try {
     const response = await openai.chat.completions.create({
       model:"gpt-4.1",
-      temperature: 0.3,
+      temperature: 0.2,
       response_format: { type: "json_object" }, // forces JSON
       messages: [
         { role: "system", content: systemPrompt },

@@ -13,7 +13,7 @@ const OAuthSuccess = () => {
         // Cookies are already set by backend, just fetch user data
         const { data } = await api.get('/auth/me');
         setUser(data.data);
-        navigate('/login', { replace: true });
+        navigate('/dashboard', { replace: true });
       } catch {
         navigate('/login', { replace: true });
       }

@@ -29,10 +29,7 @@ const reportSchema = new mongoose.Schema({
   },
   suggestions: {
     type: String,
-  },
-  cleanText: {
-    type: String,
-  },
+  }
 }, {
   timestamps: true,
 });

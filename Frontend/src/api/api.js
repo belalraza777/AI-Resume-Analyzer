@@ -6,7 +6,8 @@ const api = axios.create({
   withCredentials: true,
 });
 
-// Interceptor: on 401, refresh the token once then retry the original request
+// Interceptor: on 401, refresh the token once then retry the original request 
+//It is like a middleware that intercepts responses from the server
 api.interceptors.response.use(
   response => response,
   async error => {
