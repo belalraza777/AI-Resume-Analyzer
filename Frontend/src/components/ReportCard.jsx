@@ -103,25 +103,9 @@ const cleanText = report?.cleanText?.trim();
 
         {suggestions && cleanText ? <div className="report-divider" /> : null}
 
-        {cleanText ? (
-          <div className="report-section">
-            <div className="skills-title">Resume Text</div>
-            <div className="report-text">{cleanText}</div>
-          </div>
-        ) : null}
       </div>
 
       <div className="report-actions">
-        {/* Per-card actions; disabled when a request is in flight for this card */}
-        <button
-          type="button"
-          className="button secondary"
-          onClick={() => analyzeReport(report.resumeId)}
-          disabled={isAnalyzing || isDeleting}
-        >
-          {isAnalyzing ? <span className="spinner" aria-hidden="true" /> : <FiRefreshCcw size={18} aria-hidden="true" />}
-          <span>{isAnalyzing ? 'Analyzing...' : 'Re-run analysis'}</span>
-        </button>
         <button
           type="button"
           className="button danger"
