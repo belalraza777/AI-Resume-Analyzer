@@ -4,7 +4,7 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/auth');
 const resumeRoutes = require('./routes/resume');
 const analyzeRoutes = require('./routes/analyze');
-const oAuthRoutes = require('./routes/oAuth');
+const oAuthRoutes = require('./routes/oauth');
 const errorHandler = require('./middleware/errorHandler');
 const passport = require('./auth/passport');
 
