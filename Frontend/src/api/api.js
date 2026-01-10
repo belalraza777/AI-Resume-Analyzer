@@ -1,6 +1,7 @@
 import axios from 'axios';
 
-const API_BASE_URL = (import.meta && import.meta.env && import.meta.env.BACKEND_API_URL) || (typeof process !== 'undefined' && process.env && process.env.BACKEND_API_URL) || "http://localhost:5000/api/v1";
+// In Vite, only variables prefixed with VITE_ are exposed to the client
+const API_BASE_URL = (import.meta?.env?.VITE_BACKEND_API_URL) || "http://localhost:5000/api/v1";
 
 // Shared axios client for all requests (cookies carry tokens)
 const api = axios.create({

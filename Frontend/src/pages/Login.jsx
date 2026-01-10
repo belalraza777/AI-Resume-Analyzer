@@ -30,12 +30,12 @@ const Login = () => {
   };
 
   const handleGoogle = () => {
-    const base = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
-    window.location.href = `${base}/oauth/google`;
+    const API_BASE_URL = (import.meta?.env?.VITE_BACKEND_API_URL) || "http://localhost:5000/api/v1";
+    window.location.href = `${API_BASE_URL}/oauth/google`;
   };
   const handleFacebook = () => {
-    const base = import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1';
-    window.location.href = `${base}/oauth/facebook`;
+    const API_BASE_URL = (import.meta?.env?.VITE_BACKEND_API_URL) || "http://localhost:5000/api/v1";
+    window.location.href = `${API_BASE_URL}/oauth/facebook`;
   };
 
   return (
