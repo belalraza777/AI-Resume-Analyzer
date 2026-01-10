@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const API_BASE_URL = (import.meta && import.meta.env && import.meta.env.BACKEND_API_URL) || (typeof process !== 'undefined' && process.env && process.env.BACKEND_API_URL) || "http://localhost:5000/api/v1";
+
 // Shared axios client for all requests (cookies carry tokens)
 const api = axios.create({
-  baseURL: import.meta.env.BACKEND_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: API_BASE_URL,
   withCredentials: true,
 });
 
@@ -20,7 +22,7 @@ api.interceptors.response.use(
       originalRequest._retry = true;
       try {
         await axios.post(
-          `${import.meta.env.BACKEND_API_URL || 'http://localhost:5000/api/v1'}/auth/refresh`,
+          `${API_BASE_URL}/auth/refresh`,
           {},
           { withCredentials: true }
         );
