@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import '../styles/auth.css';
 import { FiArrowRight, FiLock, FiMail } from 'react-icons/fi';
 import { FcGoogle } from "react-icons/fc";
 import { FaFacebook } from "react-icons/fa";
