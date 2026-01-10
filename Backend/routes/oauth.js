@@ -34,7 +34,7 @@ router.get(
     setAuthCookies(res, accessToken, refreshToken);
 
     // redirect to frontend
-    res.redirect("http://localhost:5173/oauth-success");
+    res.redirect("https://ai-resume-analyzer-delta-three.vercel.app/oauth-success");
   }
 );
  
